@@ -6,22 +6,101 @@ const Image = styled.img`
   margin-top: 10vh;
 `;
 
+const RoundImage = styled.img<ImageStylesProps>`
+  height: 500px;
+  border-radius: 50%;
+  margin-right: -4rem;
+
+  margin-top: ${(props) => props.margin && "5vh"};
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  div {
+    background-color: #25392d;
+    padding: 1rem 2rem;
+    color: white;
+    border: 0.1rem solid black;
+    border-radius: 2rem;
+    width: auto;
+    font-size: 2rem;
+    margin: 0.5rem 0.5rem;
+  }
+
+  div:hover {
+    background-color: transparent;
+    color: black;
+  }
+`;
+
 const Button = styled.button`
+  font-family: "Oswald", sans-serif;
   background-color: #25392d;
-  padding: 1rem 3rem;
+  padding: 1rem;
   color: white;
-  font-size: 3rem;
+  font-size: 3.5rem;
   border-radius: 2rem;
-  margin-top: 15rem;
+  margin-top: 10vh;
+  box-shadow: 1rem 1rem 1rem rgba(205, 205, 205, 0.9);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: none;
+  }
+`;
+
+const TextButton = styled.button`
+  @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+  font-family: "Oswald", sans-serif;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  color: #25392d;
+  font-size: 3rem;
+  margin: 2rem 0;
+  cursor: pointer;
 `;
 
 const IconsContainer = styled.div`
-  margin-bottom: 5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 
+  a {
+    padding-bottom: 1rem;
+  }
+
   & a:not(:last-child) {
     margin-right: 4rem;
+  }
+`;
+
+const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  height: 100vh;
+  padding-bottom: 2vh;
+
+  p {
+    margin: 0 1rem;
+    font-size: 2.2rem;
+  }
+
+  h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+    text-align: center;
   }
 `;
 
@@ -35,6 +114,7 @@ const TextContainer = styled.div`
     font-size: 15rem;
     font-weight: 800;
     margin: 10vh 0 5rem 0;
+    color: #25392d;
   }
 
   & p {
@@ -54,6 +134,19 @@ const Container = styled.div`
   justify-content: center;
   align-items: space-between;
   background-image: url(${background});
+  background-size: cover;
+  overflow: scroll;
+  overflow-x: hidden;
 `;
 
-export { Image, Container, Button, TextContainer, IconsContainer };
+export {
+  Image,
+  Container,
+  Button,
+  TextContainer,
+  IconsContainer,
+  RoundImage,
+  CardContainer,
+  TextButton,
+  DetailsContainer,
+};

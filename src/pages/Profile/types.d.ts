@@ -1,0 +1,3 @@
+interface ImageStylesProps {
+    margin?: boolean;
+  }
